@@ -60,10 +60,10 @@ def checkSpecial(flairCur):
 def setupIMAP():
     global mail, server
     mail = imaplib.IMAP4_SSL("imap.gmail.com")
-    mail.login("acturnips@gmail.com", "takeyourmedsjimmy")
+    mail.login("USER@gmail.com", "PASSWORD")
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()
-    server.login("acturnips@gmail.com", "takeyourmedsjimmy")
+    server.login("USER@gmail.com", "PASSWORD")
     
 def findEmail():
     global mail
@@ -131,7 +131,7 @@ def getTurnipColor(num):
 setupIMAP()
 while mainLoop:
     file = open("ACoutput.txt", "a")
-    r.login("acturnipsflairbot", "takeyourmedsjimmyreddit")
+    r.login("USERNAME", "PASSWORD")
     #setupIMAP()
     subreddit = r.get_subreddit('ratemymayor')
     acturnipsSub = r.get_subreddit("acturnips")
